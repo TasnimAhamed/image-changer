@@ -18,39 +18,39 @@ window.addEventListener('resize', function() {
   beforeImage.style.width = width + 'px';
 })
 
-// resizer.addEventListener('mousedown',function(){
-//   active = true;
-//   resizer.classList.add('resize');
-// });
+resizer.addEventListener('mousedown',function(){
+  active = true;
+  resizer.classList.add('resize');
+});
 
 
-// document.getElementById("before-after-slider").addEventListener('mouseup',function(){
-//   active = false;
-//   resizer.classList.remove('resize');
-// });
+document.getElementById("before-after-slider").addEventListener('mouseup',function(){
+  active = false;
+  resizer.classList.remove('resize');
+});
 
 
-// document.getElementById("before-after-slider").addEventListener('mouseleave', function() {
-//   active = false;
-//   resizer.classList.remove('resize');
-// });
+document.getElementById("before-after-slider").addEventListener('mouseleave', function() {
+  active = false;
+  resizer.classList.remove('resize');
+});
 
 
-// document.getElementById("before-after-slider").addEventListener('mousemove',function(e){
+document.getElementById("before-after-slider").addEventListener('mousemove',function(e){
     
-//   if (!active) return;
+  if (!active) return;
   
-//   let x = e.pageX;
-//   x -= slider.getBoundingClientRect().left;
-//   slideIt(x);
-//   pauseEvent(e);
-// });
+  let x = e.pageX;
+  x -= slider.getBoundingClientRect().left;
+  slideIt(x);
+  pauseEvent(e);
+});
 
 
-// resizer.addEventListener('touchstart',function(){
-//   active = true;
-//   resizer.classList.add('resize');
-// });
+resizer.addEventListener('touchstart',function(){
+  active = true;
+  resizer.classList.add('resize');
+});
 
 
 
