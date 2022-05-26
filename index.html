@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Change Animation</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <div class="hello">
+
+    </div>
+   <div class="container" id="container">
+        <div id="before-after-slider">
+            <div id="before-image">
+            <img src="img/img2.jpg" alt="before">
+            </div>
+            <div id="after-image">
+            <img src="img/img.jpg" alt="After">
+            </div>
+            <div id="resizer"></div>  
+        </div>
+    </div>
+   </div>
+
+   <footer id="footer">
+    
+   </footer>
+
+    <script src="./js/main.js"></script>
+
+    <script>
+        const element = document.getElementById("container")
+        console.log(element.scrollHeight , element.clientHeight , element.scrollTop,document.documentElement.scrollHeight)
+        const sectionFromTop=document.getElementById("container").offsetTop
+        const sectionHeight=document.getElementById("container").offsetHeight
+
+    console.log(sectionFromTop)
+    // console.log(sectionHeight)
+
+    var lastScrollTop = 0;
+
+    let s1 = window.pageYOffset || document.documentElement.scrollTop;
+    console.log(s1)
+    if(s1>=sectionFromTop && s1<=sectionFromTop+sectionHeight){
+        // console.log("paisi")
+        let value=((s1-sectionFromTop)/sectionHeight)*100
+        document.getElementById("before-image").style.width=`${100 - value}%`
+        document.getElementById("resizer").style.left=`${100-value}%`
+    }
+
+    window.addEventListener("scroll", function(){ 
+        let s = window.pageYOffset || document.documentElement.scrollTop;
+        // console.log(s)
+        if(s>=sectionFromTop && s<=sectionFromTop+sectionHeight){
+            // console.log("paisi")
+            let value=((s-sectionFromTop)/sectionHeight)*100
+            document.getElementById("before-image").style.width=`${100 - value}%`
+            document.getElementById("resizer").style.left=`${100-value}%`
+        }
+
+        if(s<sectionFromTop){
+            document.getElementById("before-image").style.width=`100%`
+            document.getElementById("resizer").style.left=`100%`
+        }
+        if(s>sectionFromTop+sectionHeight){
+            document.getElementById("before-image").style.width=`0%`
+            document.getElementById("resizer").style.left=`0%`
+        }
+        // if (s > lastScrollTop){
+        //     // downscroll code
+        // } else {
+        //     // upscroll code
+        // }
+        lastScrollTop = scroll <= 0 ? 0 : scroll; 
+    }, false);
+
+    </script>
+</body>
+</html>

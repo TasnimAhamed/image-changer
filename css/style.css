@@ -1,0 +1,75 @@
+html{
+    scroll-behavior: smooth;
+}
+#footer{
+    height: 200vh;
+}
+.hello{
+    height: 200vh;
+}
+.container {
+    width: 50%;
+    margin: 0px auto 0px auto;
+}
+#before-after-slider {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid white;
+    height: 90vh;
+}
+#before-after-slider img {
+    width: 100%;
+    height: 100%;
+}
+#before-image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 2;
+}
+#before-after-slider img {
+    width: 100%;
+    display: block;
+}
+#after-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#before-after-slider img {
+    width: 100%;
+    display: block;
+}
+#resizer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    z-index: 5;
+    top: 0;
+    left: 100%;
+    height: 100%;
+    width: 4px;
+    background: white;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+}
+/* #resizer:after {
+    background: linear-gradient(62deg,#c93072 5%,#3365c0);
+    font-family: "Font Awesome 5 Free";
+    content: '\f337';
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: absolute;
+    margin: 0 0 0 -22px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid white;
+} */
